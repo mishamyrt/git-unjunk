@@ -1,2 +1,32 @@
 #!/bin/bash
-git branch --merged | egrep -v "(^\*|master|dev|develop)" | xargs git branch -d
+
+BRANCHES="$(git branch --merged | egrep -v "(^\*|master|dev|develop)")"
+COUNT=$(echo $BRANCHES | xargs -n1 echo | wc -l | xargs)
+BRANCHES_WORD="branch"
+MODAL_WORD="is"
+IFS=$'\n'
+
+if [ $COUNT -gt 1 ]; then
+    BRANCHES_WORD="${BRANCHES_WORD}es"
+    MODAL_WORD="are"
+fi
+
+remove_branches () {
+    echo "$BRANCHES" | xargs git branch -d
+    echo "$COUNT $BRANCHES_WORD $MODAL_WORD deleted"
+}
+
+echo "The following $BRANCHES_WORD will be removed:"
+for item in $BRANCHES
+do
+    echo "*  $item"
+done
+if [ "$1" == "-y" ] || [ "$1" == "y" ]; then
+    remove_branches
+else
+    read -p "Do you want to continue [y/n]? " ANSWER
+    case $ANSWER in
+        [Yy]* ) remove_branches "$BRANCHES";;
+        * ) exit;;
+    esac
+fi
