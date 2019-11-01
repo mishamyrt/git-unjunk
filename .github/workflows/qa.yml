@@ -9,5 +9,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
     
+    - name: Prepare Git environment
+      run: |
+        git config --global user.email "misha@myrt.co"
+        git config --global user.name "mishamyrt"
+    
     - name: Test
       run: make test
