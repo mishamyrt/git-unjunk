@@ -21,6 +21,8 @@ git checkout master
 COUNT=$(git branch | wc -l | xargs)
 if (( $COUNT > 1 )); then
     printf "${RED}Failed${NC}\n"
+    exit 1
 else
     printf "${GREEN}Passed${NC}\n"
+    exit 0
 fi
