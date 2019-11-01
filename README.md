@@ -2,6 +2,10 @@
 
 A simple script that removes all the branches from which commits are already merged in the active.
 
+<p align="center">
+<img src="./terminal@2x.png" width="650" height="auto">
+</p>
+
 ## Installation
 
 ```sh
