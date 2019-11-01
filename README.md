@@ -1,4 +1,4 @@
-# Git unjunk
+# Git Unjunk
 
 A simple script that removes all the branches from which commits are already merged to the active.
 
