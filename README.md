@@ -1,4 +1,4 @@
-# Git Unjunk
+# Git Unjunk [![Tests status](https://github.com/mishamyrt/git-unjunk/workflows/Tests/badge.svg)][actions]
 
 A simple script that removes all the branches from which commits are already merged to the active.
 
@@ -17,3 +17,5 @@ sudo make install
 ## Usage
 
 Navigate to the repository folder and run `git-unjunk` command.
+
+[actions]: https://github.com/mishamyrt/git-unjunk/actions
