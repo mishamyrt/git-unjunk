@@ -16,6 +16,6 @@ sudo make install
 
 ## Usage
 
-Navigate to the repository folder and run `git-unjunk` command.
+Navigate to the repository folder and run `git unjunk` command.
 
 [actions]: https://github.com/mishamyrt/git-unjunk/actions
