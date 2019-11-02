@@ -16,6 +16,11 @@ remove_branches () {
     echo "$COUNT $BRANCHES_WORD $MODAL_WORD deleted"
 }
 
+if [ $COUNT -eq 0 ]; then
+    echo "Nothing to remove."
+    exit 0
+fi
+
 echo "The following $BRANCHES_WORD will be removed:"
 for item in $BRANCHES
 do
