@@ -40,9 +40,9 @@ $unjunk -y
 branches_count=$(git branch | wc -l | xargs)
 
 if (( $branches_count > 1 )); then
-    printf "${red}Failed${nc}\n"
+    echo -e "${red}Failed${nc}"
     exit 1
 else
-    printf "${green}Passed${nc}\n"
+    echo -e "${green}Passed${nc}"
     exit 0
 fi
