@@ -2,7 +2,7 @@
 UNAME := $(shell uname)
 
 test:
-	./test.sh
+	bash ./test/check.sh
 
 install:
 	make install_$(UNAME)
